@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.jetpackcomposeapp.ui.screens.DetailsScreen
-import com.example.jetpackcomposeapp.ui.screens.HomeScreen
+import com.example.jetpackcomposeapp.ui.screens.details.DetailsScreen
+import com.example.jetpackcomposeapp.ui.screens.home.HomeScreen
 
 @Composable
 fun NavGraph(navController: NavHostController) {
