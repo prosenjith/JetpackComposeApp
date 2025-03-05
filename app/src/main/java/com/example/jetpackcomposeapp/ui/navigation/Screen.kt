@@ -1,8 +1,10 @@
 package com.example.jetpackcomposeapp.ui.navigation
 
-sealed class Screen(val route: String) {
-    data object Home : Screen("home")
-    data object Details : Screen("details/{item}") {
-        fun createRoute(item: String) = "details/$item"
-    }
+import androidx.annotation.DrawableRes
+import com.example.jetpackcomposeapp.R
+
+sealed class Screen(val route: String, @DrawableRes val icon: Int, val title: String) {
+    data object Home : Screen("home", R.drawable.ic_home, "Home")
+    data object Profile : Screen("profile", R.drawable.ic_profile, "Profile")
+    data object Settings : Screen("settings", R.drawable.ic_settings, "Settings")
 }
