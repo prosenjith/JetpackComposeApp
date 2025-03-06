@@ -37,13 +37,18 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController()
-            Scaffold(
-                bottomBar = { BottomNavBar(navController) }
-            ) { paddingValues ->
-                Box(modifier = Modifier.padding(paddingValues)) {
-                    NavGraph(navController)
-                }
+            MyApp()
+        }
+    }
+
+    @Composable
+    private fun MyApp() {
+        val navController = rememberNavController()
+        Scaffold(
+            bottomBar = { BottomNavBar(navController) }
+        ) { paddingValues ->
+            Box(modifier = Modifier.padding(paddingValues)) {
+                NavGraph(navController)
             }
         }
     }
