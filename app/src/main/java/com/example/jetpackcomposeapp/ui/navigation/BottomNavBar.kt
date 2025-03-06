@@ -11,7 +11,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 
 @Composable
 fun BottomNavBar(navController: NavController) {
-    val items = listOf(Screen.Home, Screen.Profile, Screen.Settings)
+    val items = listOf(BottomNavScreen.Home, BottomNavScreen.Profile, BottomNavScreen.Settings)
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
     NavigationBar {
@@ -28,7 +28,7 @@ fun BottomNavBar(navController: NavController) {
                 onClick = {
                     if (currentRoute != screen.route) {
                         navController.navigate(screen.route) {
-                            popUpTo(Screen.Home.route) { inclusive = false }
+                            popUpTo(BottomNavScreen.Home.route) { inclusive = false }
                         }
                     }
                 }
