@@ -44,6 +44,12 @@ fun HomeScreen(navController: NavController) {
         Button(onClick = { navController.navigate(Screen.Contact.route) }) {
             Text("Go to Contact")
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navController.navigate(Screen.User.withArgs("1")) }) {
+            Text("Go to User")
+        }
     }
 }
 

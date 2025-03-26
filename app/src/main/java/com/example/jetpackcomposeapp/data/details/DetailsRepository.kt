@@ -7,7 +7,7 @@ import javax.inject.Singleton
 @Singleton
 class DetailsRepository @Inject constructor() {
     suspend fun getItemDetails(itemId: String): String {
-        delay(2000) // Simulate network delay
+        delay(2000)
         return "Details for item ID: $itemId"
     }
 }

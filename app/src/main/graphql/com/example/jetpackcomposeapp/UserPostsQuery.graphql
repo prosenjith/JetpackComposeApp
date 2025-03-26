@@ -1,0 +1,11 @@
+query GetUserPosts($id: ID!) {
+    user(id: $id) {
+        posts {
+            data {
+                id
+                title
+                body
+            }
+        }
+    }
+}

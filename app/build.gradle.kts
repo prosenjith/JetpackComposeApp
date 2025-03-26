@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.apollo)
 }
 
 android {
@@ -55,6 +56,7 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.apollo.runtime)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -67,4 +69,11 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.example.jetpackcomposeapp")
+        schemaFile.set(file("src/main/graphql/com/example/jetpackcomposeapp/schema.graphqls"))
+    }
 }
