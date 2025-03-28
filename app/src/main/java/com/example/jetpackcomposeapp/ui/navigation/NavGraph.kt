@@ -14,6 +14,7 @@ import com.example.jetpackcomposeapp.ui.screens.details.DetailsScreen
 import com.example.jetpackcomposeapp.ui.screens.home.HomeScreen
 import com.example.jetpackcomposeapp.ui.screens.profile.ProfileScreen
 import com.example.jetpackcomposeapp.ui.screens.settings.SettingsScreen
+import com.example.jetpackcomposeapp.websocketpractice.ChatScreen
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -41,6 +42,13 @@ fun NavGraph(navController: NavHostController) {
         ) { backStackEntry ->
             val userId = backStackEntry.arguments?.getString("userId") ?: ""
             PostsScreen(userId)
+        }
+        composable(
+            Screen.Chat.route,
+            arguments = listOf(navArgument("userName") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val userName = backStackEntry.arguments?.getString("userName") ?: ""
+            ChatScreen(userName)
         }
     }
 }
