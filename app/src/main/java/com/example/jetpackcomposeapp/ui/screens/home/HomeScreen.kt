@@ -8,6 +8,10 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,9 +20,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposeapp.ui.navigation.Screen
+import com.example.jetpackcomposeapp.websocketpractice.NameEntryDialog
 
 @Composable
 fun HomeScreen(navController: NavController) {
+    var showDialog by remember { mutableStateOf(false) }
+    var userName by remember { mutableStateOf<String?>(null) }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -50,6 +57,28 @@ fun HomeScreen(navController: NavController) {
         Button(onClick = { navController.navigate(Screen.User.withArgs("1")) }) {
             Text("Go to User")
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = {
+            if (userName.isNullOrBlank()) {
+                showDialog = true
+            } else {
+                navController.navigate(Screen.Chat.withArgs(userName!!))
+            }
+        }) {
+            Text("Go to Chat")
+        }
+    }
+
+    if (showDialog) {
+        NameEntryDialog(
+            onNameEntered = { entered ->
+                userName = entered
+                showDialog = false
+                navController.navigate(Screen.Chat.withArgs(entered))
+            }
+        )
     }
 }
 

@@ -58,6 +58,12 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.apollo.runtime)
 
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.coroutines.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
