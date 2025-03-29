@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeapp.websocketpractice
+package com.example.jetpackcomposeapp.websocketpractice.data.remote
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

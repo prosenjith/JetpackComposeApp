@@ -14,7 +14,7 @@ import com.example.jetpackcomposeapp.ui.screens.details.DetailsScreen
 import com.example.jetpackcomposeapp.ui.screens.home.HomeScreen
 import com.example.jetpackcomposeapp.ui.screens.profile.ProfileScreen
 import com.example.jetpackcomposeapp.ui.screens.settings.SettingsScreen
-import com.example.jetpackcomposeapp.websocketpractice.ChatScreen
+import com.example.jetpackcomposeapp.websocketpractice.ui.ChatScreen
 
 @Composable
 fun NavGraph(navController: NavHostController) {

@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeapp.websocketpractice
+package com.example.jetpackcomposeapp.websocketpractice.ui
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button

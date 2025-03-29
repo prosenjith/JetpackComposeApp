@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeapp.websocketpractice
+package com.example.jetpackcomposeapp.websocketpractice.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,13 +11,17 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.jetpackcomposeapp.JetpackComposeApp
 
 @Composable
 fun ChatScreen(userName: String) {
-    val factory = remember { ChatViewModelFactory(userName) }
+    val context = LocalContext.current.applicationContext as JetpackComposeApp
+    val chatDao = context.database.chatMessageDao()
+    val factory = remember { ChatViewModelFactory(userName, chatDao) }
     val viewModel: ChatViewModel = viewModel(factory = factory)
 
     val messages by viewModel.messages.collectAsState()

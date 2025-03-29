@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeapp.websocketpractice
+package com.example.jetpackcomposeapp.websocketpractice.model
 
 import android.util.Log
 import com.google.gson.Gson

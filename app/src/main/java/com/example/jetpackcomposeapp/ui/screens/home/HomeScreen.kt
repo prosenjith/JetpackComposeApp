@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposeapp.ui.navigation.Screen
-import com.example.jetpackcomposeapp.websocketpractice.NameEntryDialog
+import com.example.jetpackcomposeapp.websocketpractice.ui.NameEntryDialog
 
 @Composable
 fun HomeScreen(navController: NavController) {
