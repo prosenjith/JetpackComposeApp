@@ -6,6 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.jetpackcomposeapp.asynchronous.PostScreen
 import com.example.jetpackcomposeapp.graphqlpractice.ui.PostsScreen
 import com.example.jetpackcomposeapp.graphqlpractice.ui.UserScreen
 import com.example.jetpackcomposeapp.ui.screens.about.AboutScreen
@@ -50,5 +51,6 @@ fun NavGraph(navController: NavHostController) {
             val userName = backStackEntry.arguments?.getString("userName") ?: ""
             ChatScreen(userName)
         }
+        composable(Screen.Post.route) { PostScreen() }
     }
 }

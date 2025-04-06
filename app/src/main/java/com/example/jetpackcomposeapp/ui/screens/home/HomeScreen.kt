@@ -69,6 +69,12 @@ fun HomeScreen(navController: NavController) {
         }) {
             Text("Go to Chat")
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navController.navigate(Screen.Post.route) }) {
+            Text("Go to Post")
+        }
     }
 
     if (showDialog) {
