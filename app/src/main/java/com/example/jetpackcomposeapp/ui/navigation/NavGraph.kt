@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import com.example.jetpackcomposeapp.asynchronous.PostScreen
 import com.example.jetpackcomposeapp.graphqlpractice.ui.PostsScreen
 import com.example.jetpackcomposeapp.graphqlpractice.ui.UserScreen
+import com.example.jetpackcomposeapp.search.SearchScreen
 import com.example.jetpackcomposeapp.ui.screens.about.AboutScreen
 import com.example.jetpackcomposeapp.ui.screens.contact.ContactScreen
 import com.example.jetpackcomposeapp.ui.screens.details.DetailsScreen
@@ -52,5 +53,6 @@ fun NavGraph(navController: NavHostController) {
             ChatScreen(userName)
         }
         composable(Screen.Post.route) { PostScreen() }
+        composable(Screen.Search.route) { SearchScreen() }
     }
 }

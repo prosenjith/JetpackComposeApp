@@ -75,6 +75,12 @@ fun HomeScreen(navController: NavController) {
         Button(onClick = { navController.navigate(Screen.Post.route) }) {
             Text("Go to Post")
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navController.navigate(Screen.Search.route) }) {
+            Text("Go to Search")
+        }
     }
 
     if (showDialog) {

@@ -8,6 +8,7 @@ sealed class Screen(val route: String) {
     data object Posts: Screen("posts/{userId}")
     data object Chat: Screen("chat/{userName}")
     data object Post: Screen("post")
+    data object Search: Screen("search")
 
     fun withArgs(vararg args: String): String {
         var updatedRoute = route
