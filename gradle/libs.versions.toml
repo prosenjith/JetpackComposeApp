@@ -18,6 +18,9 @@ retrofit = "2.9.0"
 coroutines = "1.5.2"
 datastore = "1.0.0"
 coil = "2.4.0"
+firebase-bom = "33.14.0"
+google-services = "4.4.2"
+firebaseCommonKtx = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +50,9 @@ retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", ver
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "firebase-bom" }
+firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -55,4 +61,4 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 apollo = { id = "com.apollographql.apollo3", version.ref = "apollo" }
-
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
